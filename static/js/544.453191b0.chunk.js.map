@@ -1,0 +1,1 @@
+{"version":3,"file":"static/js/544.453191b0.chunk.js","mappings":"0IAMA,UANa,WACb,OACIA,EAAAA,EAAAA,KAAA,OAAAC,SAAK,QAET,C","sources":["pages/Home/Home.jsx"],"sourcesContent":["const Home = () => {\r\nreturn(\r\n    <div>Home</div>\r\n)\r\n}\r\n\r\nexport default Home;"],"names":["_jsx","children"],"sourceRoot":""}
