@@ -5,6 +5,8 @@ import { useCars } from 'hooks';
 import { clearCarsData} from 'redux/cars/carsSlice';
 import { useState } from 'react';
 import { Filter } from 'components/Filter';
+import { CarList } from 'components/CarList';
+import { BtnMore } from './Catalog.styled';
 
 const Catalog = () => {
   const dispatch = useDispatch();
@@ -35,11 +37,16 @@ useEffect(() => {
   const showBtnMore = allCars.length / 8 >= page && !isLoading && showButton
 
 
-  return (<section>
+  return (
+  <div>
     <Filter/>
-    Catalog
-     {showBtnMore && ( <button onClick={handleLoadMoreClick}>Load more</button>)}
-  </section>)
+    <section>
+    {allCars.length && (
+      <CarList data={allCars}/>
+    )}
+       {showBtnMore && ( <BtnMore onClick={handleLoadMoreClick}>Load more</BtnMore>)}
+    </section>
+  </div>)
 };
 
 export default Catalog;

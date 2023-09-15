@@ -7,8 +7,9 @@ body {
     'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  // font-size: 14px;
-  // color: #423d37;
+  font-size: 14px;
+  color: #121417;
+  font-weight: 400;
 }
 
 code {
@@ -26,11 +27,18 @@ p {
   margin-top: 0;
   margin-bottom: 0;
 }
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
 ul {
   margin: 0;
   padding: 0;
   list-style: none;
 }
+
 button {
   cursor: pointer;
 }

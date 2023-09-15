@@ -12,6 +12,8 @@ export const Container = styled.div`
 export const ContainerMain = styled(Container)`
   margin-left: auto;
   margin-right: auto;
+  padding-top: 0;
+  padding-bottom: 30px;
   // @media screen and (min-width: 760px) {
   //   max-width: 760px;
   // }
