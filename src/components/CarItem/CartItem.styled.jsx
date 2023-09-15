@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const ListItem = styled.li`
   position: relative;
-  flex-basis: calc((100% - 87px) / 5);
+  //   flex-basis: calc((100% - 87px) / 5);
   height: 426px;
   border-radius: 12px;
   transition: box-shadow 300ms
@@ -27,7 +27,7 @@ export const FavoriteBtn = styled.button`
   padding: 0;
   justify-content: center;
   align-items: center;
-  
+
   svg {
     width: 18px;
     height: 18px;
@@ -66,7 +66,10 @@ export const NameAccent = styled.span`
 export const InfoList = styled.ul`
   display: flex;
   flex-wrap: wrap;
-  margin-bottom: 4px;
+`;
+
+export const InfoListSecond = styled(InfoList)`
+  margin-top: 4px;
 `;
 
 export const InfoItem = styled.li`

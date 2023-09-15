@@ -4,6 +4,7 @@ import {
   Image,
   InfoItem,
   InfoList,
+  InfoListSecond,
   ListItem,
   NameAccent,
   NameCar,
@@ -77,12 +78,12 @@ export const CarItem = ({ dataCar }) => {
         <InfoItem>{country}</InfoItem>
         <InfoItem>{rentalCompany}</InfoItem>
       </InfoList>
-      <InfoList>
+      <InfoListSecond>
         <InfoItem>{type}</InfoItem>
         <InfoItem>{make}</InfoItem>
         <InfoItem>{id}</InfoItem>
         <InfoItem>{feature}</InfoItem>
-      </InfoList>
+      </InfoListSecond>
       <BtnLearnMore type="button">Learn more</BtnLearnMore>
     </ListItem>
   );
