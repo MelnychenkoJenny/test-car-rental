@@ -41,7 +41,7 @@ useEffect(() => {
   <div>
     <Filter/>
     <section>
-    {allCars.length && (
+    {allCars.length !== 0 && (
       <CarList data={allCars}/>
     )}
        {showBtnMore && ( <BtnMore onClick={handleLoadMoreClick}>Load more</BtnMore>)}

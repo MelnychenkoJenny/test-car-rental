@@ -1,4 +1,4 @@
-import { BtnLearnMore, Image, InfoItem, InfoList, ListItem, NameAccent, NameCar, Price, TitleWrap } from "./CartItem.styled";
+import { BtnLearnMore, FavoriteBtn, Image, InfoItem, InfoList, ListItem, NameAccent, NameCar, Price, TitleWrap } from "./CartItem.styled";
 
 import icon from 'images/heart-icon.svg'
 // import { useState } from "react";
@@ -20,11 +20,11 @@ const handleFavorite = (dataCar) => {
 
     return (
         <ListItem>
-            <button type='button' onClick={()=> handleFavorite(dataCar)}>
+            <FavoriteBtn type='button' onClick={()=> handleFavorite(dataCar)}>
                 <svg>
                     <use href={icon + '#heart'}></use>
                 </svg>
-            </button>
+            </FavoriteBtn>
             <Image src={img} alt={`${make} ${model}`} width='274' height='268'/>
             <TitleWrap>
                 <NameCar>{make}

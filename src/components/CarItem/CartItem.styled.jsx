@@ -6,26 +6,35 @@ export const ListItem = styled.li`
   height: 426px;
   border-radius: 12px;
   transition: box-shadow 300ms
-    ${({ theme: { transition } }) => transition.timingFunction}, scale 300ms
-    ${({ theme: { transition } }) => transition.timingFunction};
+      ${({ theme: { transition } }) => transition.timingFunction},
+    scale 300ms ${({ theme: { transition } }) => transition.timingFunction};
 
   &:hover {
-  box-shadow: ${({ theme: { colors } }) => colors.shadow};
-  scale: 1.04;
+    box-shadow: ${({ theme: { colors } }) => colors.shadow};
+    scale: 1.04;
   }
+`;
 
+export const FavoriteBtn = styled.button`
+  position: absolute;
+  right: 14px;
+  top: 14px;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  background-color: transparent;
+  border: transparent;
+  padding: 0;
+  justify-content: center;
+  align-items: center;
+  
   svg {
-    position: absolute;
-    right: 14px;
-    top: 14px;
     width: 18px;
     height: 18px;
     fill: transparent;
-   opacity: 90%;
+    opacity: 90%;
     stroke: ${({ theme: { colors } }) => colors.white};
-    
   }
-
 `;
 
 export const Image = styled.img`
@@ -43,37 +52,36 @@ export const TitleWrap = styled.div`
 `;
 
 export const NameCar = styled.div`
-font-size: 16px;
-font-weight: 500;
-line-height: 1.5;
-`
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+`;
 
-export const Price = styled(NameCar)`
-`
+export const Price = styled(NameCar)``;
 
 export const NameAccent = styled.span`
-color: ${({ theme: { colors } }) => colors.accentLight};
-`
+  color: ${({ theme: { colors } }) => colors.accentLight};
+`;
 
 export const InfoList = styled.ul`
-display: flex;
-flex-wrap: wrap;
-margin-bottom: 4px;
-`
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 4px;
+`;
 
 export const InfoItem = styled.li`
-font-size: 12px;
-font-weight: 400;
-line-height: 1.5;
-color: ${({ theme: { colors } }) => colors.secondaryText};
-&:not(:last-child) {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.5;
+  color: ${({ theme: { colors } }) => colors.secondaryText};
+  &:not(:last-child) {
     border-right: 2px solid ${({ theme: { colors } }) => colors.line};
     padding-right: 6px;
-}
-&:not(:first-child) {
+  }
+  &:not(:first-child) {
     padding-left: 6px;
-}
-`
+  }
+`;
 
 export const BtnLearnMore = styled.button`
   width: 274px;
