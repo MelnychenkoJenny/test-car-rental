@@ -1,5 +1,45 @@
+import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { getAllCars } from 'redux/cars/carsOperations';
+import { useCars } from 'hooks';
+import { clearCarsData} from 'redux/cars/carsSlice';
+import { useState } from 'react';
+import { Filter } from 'components/Filter';
+
 const Catalog = () => {
-  return <div>Catalog</div>;
+  const dispatch = useDispatch();
+  const { allCars, isLoading } = useCars();
+  const [page, setPage] = useState(1)
+  const [showButton, setShowButton] = useState(false);
+
+
+  console.log(allCars);
+
+
+console.log('page :>> ', page);
+
+useEffect(() => {
+  dispatch(clearCarsData());
+  setShowButton(false);
+}, [dispatch]);
+
+  useEffect(()=>{
+      dispatch(getAllCars(page))
+      setShowButton(true);
+  }, [dispatch, page]);
+
+  const handleLoadMoreClick = () => {
+    setPage(prev=>prev+1)
+  };
+
+  const showBtnMore = allCars.length / 8 >= page && !isLoading && showButton
+
+
+  return (<section>
+    <Filter/>
+    Catalog
+     {showBtnMore && ( <button onClick={handleLoadMoreClick}>Load more</button>)}
+  </section>)
 };
 
 export default Catalog;
