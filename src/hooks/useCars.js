@@ -15,5 +15,5 @@ export const useCars = () => {
   };
 };
 
-// import { useCars } from 'components/hooks';
+// import { useCars } from 'hooks';
 // const { allCars, isLoading, error, favorite } = useCars();
