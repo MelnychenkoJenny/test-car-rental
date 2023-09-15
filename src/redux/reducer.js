@@ -1,34 +1,18 @@
-// import storage from 'redux-persist/lib/storage';
+import persistReducer from 'redux-persist/es/persistReducer';
+import storage from 'redux-persist/lib/storage';
 // import persistReducer from 'redux-persist/es/persistReducer';
 // import { persistReducer } from 'redux-persist';
 import { carsReducer } from './cars/carsSlice';
+import { favoriteReducer } from './favorite/favoriteSlice';
 // import { combineReducers } from '@reduxjs/toolkit';
 
-// const carPersistConfig = {
-//   key: 'cars',
-//   storage,
-//   blacklist: ['currentPage', 'allCars'],
-// };
-
-// export const reducer = {
-//   cars: persistReducer(carPersistConfig, carsReducer),
-// };
-
+const favoritePersistConfig = {
+  key: 'favorite',
+  storage,
+};
 
 
 export const reducer = {
-    cars: carsReducer
+    cars: carsReducer,
+    favorite: persistReducer(favoritePersistConfig, favoriteReducer)
 }
-
-
-// const persistConfig = {
-//     key: 'root',
-//     storage,
-//     blacklist: ['cars'], // Включити будь-які інші редюсери, крім cars
-//   };
-  
-//   const rootReducer = combineReducers({
-//     cars: carsReducer,
-//   });
-
-// export const reducer = persistReducer(persistConfig, rootReducer);
