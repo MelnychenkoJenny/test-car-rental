@@ -8,3 +8,5 @@ export const CartListStyle = styled.ul`
   margin-bottom: 100px;
   text-align: center;
 `;
+
+

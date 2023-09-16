@@ -18,3 +18,8 @@ export const LoadingStyle = styled.div`
   border-radius: 50%;
   animation: ${spin} 1s linear infinite;
 `;
+
+export const LoadingWrap = styled.div`
+height: 100vh;
+padding-top: 230px;
+`

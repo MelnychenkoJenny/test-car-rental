@@ -57,6 +57,10 @@ export const NameCar = styled.div`
   line-height: 1.5;
 `;
 
+export const NameCarModal = styled(NameCar)`
+  font-size: 18px;
+`;
+
 export const Price = styled(NameCar)``;
 
 export const NameAccent = styled.span`
@@ -70,6 +74,14 @@ export const InfoList = styled.ul`
 
 export const InfoListSecond = styled(InfoList)`
   margin-top: 4px;
+`;
+
+export const InfoListSecModal = styled(InfoListSecond)`
+  margin-bottom: 14px;
+`;
+
+export const InfoListModal = styled(InfoListSecond)`
+  margin-bottom: 24px;
 `;
 
 export const InfoItem = styled.li`
@@ -104,6 +116,78 @@ export const BtnLearnMore = styled.button`
   transition: background-color 300ms
     ${({ theme: { transition } }) => transition.timingFunction};
 
+  &:hover {
+    background-color: ${({ theme: { colors } }) => colors.accentDark};
+  }
+`;
+
+export const Description = styled.p`
+  margin-bottom: 24px;
+  text-align: justify;
+`;
+
+export const TextModal = styled.p`
+  margin-bottom: 8px;
+  font-weight: 500;
+`;
+
+export const ConditionsList = styled.ul`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+`;
+
+export const ConditionsItem = styled.li`
+  padding: 7px 14px;
+  border-radius: 35px;
+  font-size: 12px;
+  line-height: 1.5;
+  background-color: ${({ theme: { colors } }) => colors.bgElements};
+`;
+
+export const Accent = styled.span`
+  color: ${({ theme: { colors } }) => colors.accentLight};
+  font-weight: 600;
+  letter-spacing: -0.24px;
+`;
+
+export const ModalScrollWrap = styled.div`
+max-width: 446px;
+  height: 200px;
+  padding-right: 15px;
+  overflow-y: scroll;
+  ::-webkit-scrollbar {
+    width: 5px; /* Ширина скрола */
+  }
+
+  ::-webkit-scrollbar-track {
+    background: ${({ theme: { colors } }) => colors.secondaryTextLight}; 
+    border-radius: 15px;/* Фон треку скрола */
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: ${({ theme: { colors } }) => colors.accentLight}; /* Колір пальця скрола (перетягуючої частини) */
+    border-radius: 15px; /* Закруглені кути пальця скрола */
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: ${({ theme: { colors } }) => colors.accentDark}; /* Колір пальця скрола при наведенні */
+  }
+`;
+
+export const RentalPhone = styled.a`
+  display: flex;
+
+  margin-top: 24px;
+  width: 168px;
+  height: 44px;
+  justify-content: center;
+  align-items: center;
+  color:${({ theme: { colors } }) => colors.white};
+  font-weight: 600;
+  border-radius: 12px;
+  background-color: ${({ theme: { colors } }) => colors.accentLight};
+  transition: background-color 300ms ${({ theme: { transition } }) => transition.timingFunction};
   &:hover {
     background-color: ${({ theme: { colors } }) => colors.accentDark};
   }

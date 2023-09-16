@@ -1,20 +1,25 @@
 import { CarItem } from 'components/CarItem';
 import { CartListStyle } from 'components/CarList/CartList.styled';
+import { EmptyFavorite } from 'components/EmptyFavorite/EmptyFavorite';
 import { useCars } from 'hooks';
+import { FavoriteWrap } from './Favorites.styled';
 
 const Favorites = () => {
+  const { favorite } = useCars();
 
-const { favorite } = useCars();
-console.log(favorite, 45641561);
-    return(
-        <>
+  return (
+    <FavoriteWrap>
+      {favorite.length === 0 ? (
+        <EmptyFavorite/>
+      ) : (
         <CartListStyle>
           {favorite.map(car => (
-           <CarItem dataCar={car} key={car.id} />
+            <CarItem dataCar={car} key={car.id} />
           ))}
         </CartListStyle>
-    </>
-    )
-    }
-    
-    export default Favorites;
+      )}
+    </FavoriteWrap>
+  );
+};
+
+export default Favorites;

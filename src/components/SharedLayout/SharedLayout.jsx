@@ -1,3 +1,4 @@
+import { Footer } from 'components/Footer';
 import {Loading} from 'components/Loading';
 import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
@@ -39,6 +40,7 @@ export const SharedLayout = () => {
           </ContainerMain>
         </main>
       </Suspense>
+      <Footer/>
     </>
   );
 };

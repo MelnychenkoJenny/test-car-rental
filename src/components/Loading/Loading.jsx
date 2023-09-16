@@ -1,5 +1,9 @@
-import { LoadingStyle } from './Loading.styled';
+import { LoadingStyle, LoadingWrap } from './Loading.styled';
 
 export const Loading = () => {
-  return <LoadingStyle />;
+  return (
+    <LoadingWrap>
+      <LoadingStyle />
+    </LoadingWrap>
+  );
 };
