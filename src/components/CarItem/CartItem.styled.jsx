@@ -34,6 +34,14 @@ export const FavoriteBtn = styled.button`
     fill: transparent;
     opacity: 90%;
     stroke: ${({ theme: { colors } }) => colors.white};
+    transition: fill 300ms
+    ${({ theme: { transition } }) => transition.timingFunction}, stroke 300ms
+    ${({ theme: { transition } }) => transition.timingFunction}, scale 300ms
+    ${({ theme: { transition } }) => transition.timingFunction};
+    &:hover {
+      fill: ${({ theme: { colors } }) => colors.accentLight};
+      stroke: ${({ theme: { colors } }) => colors.accentLight};
+      scale: 1.5;
   }
 `;
 
@@ -152,7 +160,7 @@ export const Accent = styled.span`
 `;
 
 export const ModalScrollWrap = styled.div`
-max-width: 446px;
+  max-width: 446px;
   height: 200px;
   padding-right: 15px;
   overflow-y: scroll;
@@ -161,17 +169,19 @@ max-width: 446px;
   }
 
   ::-webkit-scrollbar-track {
-    background: ${({ theme: { colors } }) => colors.secondaryTextLight}; 
-    border-radius: 15px;/* Фон треку скрола */
+    background: ${({ theme: { colors } }) => colors.secondaryTextLight};
+    border-radius: 15px; /* Фон треку скрола */
   }
 
   ::-webkit-scrollbar-thumb {
-    background: ${({ theme: { colors } }) => colors.accentLight}; /* Колір пальця скрола (перетягуючої частини) */
+    background: ${({ theme: { colors } }) =>
+      colors.accentLight}; /* Колір пальця скрола (перетягуючої частини) */
     border-radius: 15px; /* Закруглені кути пальця скрола */
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: ${({ theme: { colors } }) => colors.accentDark}; /* Колір пальця скрола при наведенні */
+    background: ${({ theme: { colors } }) =>
+      colors.accentDark}; /* Колір пальця скрола при наведенні */
   }
 `;
 
@@ -183,11 +193,12 @@ export const RentalPhone = styled.a`
   height: 44px;
   justify-content: center;
   align-items: center;
-  color:${({ theme: { colors } }) => colors.white};
+  color: ${({ theme: { colors } }) => colors.white};
   font-weight: 600;
   border-radius: 12px;
   background-color: ${({ theme: { colors } }) => colors.accentLight};
-  transition: background-color 300ms ${({ theme: { transition } }) => transition.timingFunction};
+  transition: background-color 300ms
+    ${({ theme: { transition } }) => transition.timingFunction};
   &:hover {
     background-color: ${({ theme: { colors } }) => colors.accentDark};
   }

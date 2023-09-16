@@ -4,7 +4,6 @@ import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
 import {
   Container,
-  ContainerMain,
   Header,
   NavItem,
   NavLinkStyles,
@@ -35,9 +34,9 @@ export const SharedLayout = () => {
       </Header>
       <Suspense fallback={<Loading />}>
         <main>
-          <ContainerMain>
+          <div>
             <Outlet />
-          </ContainerMain>
+          </div>
         </main>
       </Suspense>
       <Footer/>

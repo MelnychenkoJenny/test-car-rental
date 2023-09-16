@@ -4,6 +4,8 @@ export const theme = {
     accentDark: '#0B44CD',
     accentLight: '#3470FF',
     bgHeader: '#a7c1ff',
+    mainTitle: '#739bfb',
+    textShadow: '#5f6e86',
     primaryText: '#121417',
     secondaryText: '#12141780',
     secondaryTextLight: '#12141733',

@@ -8,6 +8,7 @@ import { Filter } from 'components/Filter';
 import { CarList } from 'components/CarList';
 import { BtnMore } from './Catalog.styled';
 import { Loading } from 'components/Loading';
+import { ContainerMain } from 'components/SharedLayout/SharedLayout.styled';
 
 const Catalog = () => {
   const dispatch = useDispatch();
@@ -46,7 +47,7 @@ const Catalog = () => {
   const showBtnMore = allCars.length / 8 >= page && !isLoading && showButton;
 
   return (
-    <div>
+    <ContainerMain>
       {!isLoading && !error ? <Filter /> : <Loading />}
 
       <section>
@@ -55,7 +56,7 @@ const Catalog = () => {
           <BtnMore onClick={handleLoadMoreClick}>Load more</BtnMore>
         )}
       </section>
-    </div>
+    </ContainerMain>
   );
 };
 
