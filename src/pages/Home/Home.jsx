@@ -1,8 +1,10 @@
+
 import {
   CountryText,
   HomeItem,
   HomeList,
   HomeWrap,
+  LinkRental,
   MainTitle,
 } from './Home.styled';
 
@@ -31,6 +33,7 @@ const Home = () => {
           <span>24/7 support</span>
         </HomeItem>
       </HomeList>
+      <LinkRental to="catalog">Get rental car</LinkRental>
     </HomeWrap>
   );
 };

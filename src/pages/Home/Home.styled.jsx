@@ -1,4 +1,5 @@
 import styled, { keyframes } from 'styled-components';
+import { Link } from 'react-router-dom';
 import image from 'images/home-cars.png';
 
 const slideInLeft = keyframes`
@@ -50,7 +51,7 @@ export const HomeList = styled.ul`
   justify-content: center;
   flex-wrap: wrap;
   gap: 15px;
-  padding-bottom: 290px;
+  padding-bottom: 210px;
 `;
 export const HomeItem = styled.li`
   margin: 4px 0;
@@ -91,5 +92,26 @@ export const HomeItem = styled.li`
   }
   &:hover:before {
     transform: scaleX(1);
+  }
+`;
+
+export const LinkRental = styled(Link)`
+  width: 274px;
+  height: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 30px;
+  font-weight: 600;
+  line-height: 1.43;
+  border-radius: 12px;
+  border: transparent;
+  background-color: ${({ theme: { colors } }) => colors.accentLight};
+  color: ${({ theme: { colors } }) => colors.white};
+  transition: background-color 300ms
+    ${({ theme: { transition } }) => transition.timingFunction};
+
+  &:hover {
+    background-color: ${({ theme: { colors } }) => colors.accentDark};
   }
 `;
