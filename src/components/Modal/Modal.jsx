@@ -28,8 +28,8 @@ export const Modal = ({ children, onClose }) => {
 
   const handleIconClose = () => {
     onClose();
-      document.body.style.overflow = 'visible';
-  }
+    document.body.style.overflow = 'visible';
+  };
 
   document.body.style.overflow = 'hidden';
 
@@ -47,11 +47,3 @@ export const Modal = ({ children, onClose }) => {
     modalRoot
   );
 };
-//  <div className={scss.modal}>
-//                <div className={scss.closebtn} onClick={onClose} data-theme={user.theme} >
-//                   <svg className={scss.icon} width="18" height="18">
-//                      <use className='icon' href={sprite + '#icon-close'} ></use>
-//                   </svg>
-//                </div>
-//                   {children}
-//             </div>

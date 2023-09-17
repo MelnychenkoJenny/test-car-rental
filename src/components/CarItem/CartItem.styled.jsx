@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 export const ListItem = styled.li`
   position: relative;
-  //   flex-basis: calc((100% - 87px) / 5);
   height: 426px;
   border-radius: 12px;
   transition: box-shadow 300ms

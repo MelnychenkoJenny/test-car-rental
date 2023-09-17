@@ -44,9 +44,11 @@ export const Social = styled(Link)`
   svg {
     width: 20px;
     height: 20px;
-    transition: scale 300ms ${({ theme: { transition } }) => transition.timingFunction};
+    transition: scale 300ms
+      ${({ theme: { transition } }) => transition.timingFunction};
   }
-  transition: scale 300ms ${({ theme: { transition } }) => transition.timingFunction};
+  transition: scale 300ms
+    ${({ theme: { transition } }) => transition.timingFunction};
   :hover svg {
     scale: 1.3;
   }

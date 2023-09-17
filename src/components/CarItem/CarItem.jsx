@@ -24,7 +24,6 @@ import {
 
 import icon from 'images/heart.svg';
 import iconFill from 'images/heartFill.svg';
-// import { useState } from "react";
 import { useCars } from 'hooks';
 import { useDispatch } from 'react-redux';
 import {
@@ -61,8 +60,8 @@ export const CarItem = ({ dataCar }) => {
   const country = location[2];
   const city = location[1];
   const feature = accessories[2];
-  const conditions = rentalConditions.split('\n')
-  const age = conditions[0].match(/\d+/)
+  const conditions = rentalConditions.split('\n');
+  const age = conditions[0].match(/\d+/);
 
   const openModal = () => {
     setShowModal(true);
@@ -72,19 +71,17 @@ export const CarItem = ({ dataCar }) => {
     setShowModal(false);
   };
 
-
-
   const handleFavorite = dataCar => {
     if (!favorite.some(car => car.id === dataCar.id)) {
       dispatch(addToFavorite(dataCar));
     } else {
-      dispatch(removeFromFavorite(dataCar)); 
+      dispatch(removeFromFavorite(dataCar));
     }
   };
 
   return (
     <>
-      <ListItem key={img+'333'}>
+      <ListItem key={img + '333'}>
         <FavoriteBtn type="button" onClick={() => handleFavorite(dataCar)}>
           {favorite.some(car => car.id === dataCar.id) ? (
             <svg>
@@ -121,13 +118,13 @@ export const CarItem = ({ dataCar }) => {
       </ListItem>
       {showModal && (
         <Modal onClose={closeModal}>
-            <Image src={img} alt={`${make} ${model}`} width="461" height="248" />
-            <TitleWrap>
-              <NameCarModal>
-                {make}
-                <NameAccent> {model}</NameAccent>, {year}
-              </NameCarModal>
-            </TitleWrap>
+          <Image src={img} alt={`${make} ${model}`} width="461" height="248" />
+          <TitleWrap>
+            <NameCarModal>
+              {make}
+              <NameAccent> {model}</NameAccent>, {year}
+            </NameCarModal>
+          </TitleWrap>
           <ModalScrollWrap>
             <InfoList>
               <InfoItem>{city}</InfoItem>
@@ -140,7 +137,7 @@ export const CarItem = ({ dataCar }) => {
               <InfoItem>Fuel consumption: {fuelConsumption}</InfoItem>
               <InfoItem>Engine size: {engineSize}</InfoItem>
             </InfoListSecModal>
-  
+
             <Description>{description}</Description>
             <TextModal>Accessories and functionalities:</TextModal>
             <InfoList>
@@ -155,14 +152,20 @@ export const CarItem = ({ dataCar }) => {
             </InfoListModal>
             <TextModal> Rental Conditions:</TextModal>
             <ConditionsList>
-              <ConditionsItem>Minimum age: <Accent>{age[0]}</Accent></ConditionsItem>
+              <ConditionsItem>
+                Minimum age: <Accent>{age[0]}</Accent>
+              </ConditionsItem>
               <ConditionsItem>{conditions[1]}</ConditionsItem>
               <ConditionsItem>{conditions[2]}</ConditionsItem>
-              <ConditionsItem>Mileage: <Accent>{mileage.toLocaleString()}</Accent></ConditionsItem>
-              <ConditionsItem>Price: <Accent>{rentalPrice}</Accent></ConditionsItem>
+              <ConditionsItem>
+                Mileage: <Accent>{mileage.toLocaleString()}</Accent>
+              </ConditionsItem>
+              <ConditionsItem>
+                Price: <Accent>{rentalPrice}</Accent>
+              </ConditionsItem>
             </ConditionsList>
           </ModalScrollWrap>
-          <RentalPhone href="tel:+380730000000" >Rental car</RentalPhone>
+          <RentalPhone href="tel:+380730000000">Rental car</RentalPhone>
         </Modal>
       )}
     </>

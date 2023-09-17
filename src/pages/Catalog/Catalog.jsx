@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { getAllCars, getAllCarsWithoutPage } from 'redux/cars/carsOperations';
 import { useCars } from 'hooks';
 import { clearCarsData } from 'redux/cars/carsSlice';
@@ -12,8 +12,6 @@ import { ContainerMain } from 'components/SharedLayout/SharedLayout.styled';
 import { Error } from 'components/Error';
 
 const Catalog = () => {
-  const stateAll = useSelector(state => state);
-  console.log('stateAll :>> ', stateAll);
   const dispatch = useDispatch();
   const {
     allCars,
@@ -29,7 +27,6 @@ const Catalog = () => {
   const [page, setPage] = useState(1);
   const [showButton, setShowButton] = useState(false);
 
-  // console.log(mileageFrom, 888);
   useEffect(() => {
     const height = 426;
     if (allCars.length > 8) {

@@ -48,7 +48,6 @@ const Favorites = () => {
     return isMatch;
   });
 
-  // const combinedCars = onFilter ? filteredCars : allCars;
   return (
     <FavoriteWrap>
       <div>

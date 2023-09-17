@@ -163,9 +163,9 @@ export const ButtonFilter = styled.button`
   background: ${({ theme: { colors } }) => colors.accentLight};
   border: transparent;
   transition: background-color 300ms
-  ${({ theme: { transition } }) => transition.timingFunction};
+    ${({ theme: { transition } }) => transition.timingFunction};
 
-&:hover {
-  background-color: ${({ theme: { colors } }) => colors.accentDark};
-}
+  &:hover {
+    background-color: ${({ theme: { colors } }) => colors.accentDark};
+  }
 `;

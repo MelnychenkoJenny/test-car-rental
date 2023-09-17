@@ -1,10 +1,19 @@
-import { ContainerError, TextError, ContainerFilterEmpty } from './Error.styled';
+import {
+  ContainerError,
+  TextError,
+  ContainerFilterEmpty,
+} from './Error.styled';
 import EmptyImg from 'images/error.png';
 
 export const Error = ({ error, emptyFilter }) => {
   return (
     <div>
-       {error && <ContainerError><TextError>Oops... Something went wrong. {error} 🙄</TextError><img src={EmptyImg} alt="emptyImageCat" width="400" /></ContainerError>}
+      {error && (
+        <ContainerError>
+          <TextError>Oops... Something went wrong. {error} 🙄</TextError>
+          <img src={EmptyImg} alt="emptyImageCat" width="400" />
+        </ContainerError>
+      )}
       {emptyFilter && (
         <ContainerFilterEmpty>
           <TextError>
@@ -13,8 +22,6 @@ export const Error = ({ error, emptyFilter }) => {
           <img src={EmptyImg} alt="emptyImageCat" width="400" />
         </ContainerFilterEmpty>
       )}
-     
-      
     </div>
   );
 };

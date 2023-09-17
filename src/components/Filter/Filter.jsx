@@ -31,9 +31,6 @@ export const Filter = () => {
   const [errorMileage, setErrorMileage] = useState(false);
   const dispatch = useDispatch();
 
-
-  // console.log('selectedFromMileage :>> ', selectedFromMileage);
-
   const handleShownSelectedBrand = e => {
     e.preventDefault();
     setShownSelectBrand(prev => !prev);
@@ -42,7 +39,7 @@ export const Filter = () => {
   const handleShownSelectedPrice = e => {
     e.preventDefault();
     setShownSelectPrice(prev => !prev);
-  }
+  };
   const changeBrand = brand => {
     setSelectedBrand(brand);
     setShownSelectBrand(false);
@@ -52,61 +49,65 @@ export const Filter = () => {
     setShownSelectPrice(false);
   };
 
-  const handleInputChangeFrom = (e) => {
+  const handleInputChangeFrom = e => {
     const { value } = e.target;
 
     if (!/^\d+$/.test(value.trim())) {
       setErrorMileage(true);
     } else {
-      setErrorMileage(false);}
-    setSelectedFromMileage(value)
+      setErrorMileage(false);
+    }
+    setSelectedFromMileage(value);
+  };
 
-  }
-  
-  const handleInputChangeTo = (e) => {
+  const handleInputChangeTo = e => {
     const { value } = e.target;
-    
+
     if (!/^\d+$/.test(value.trim())) {
       setErrorMileage(true);
     } else {
       setErrorMileage(false);
     }
 
-    setSelectedToMileage(value)
-
-  }
+    setSelectedToMileage(value);
+  };
 
   const handleFilterSubmit = e => {
     e.preventDefault();
-    if(selectedBrand === 'Enter the text' && selectedPrice==="To $" && !selectedFromMileage && !selectedToMileage) {
-      return
+    if (
+      selectedBrand === 'Enter the text' &&
+      selectedPrice === 'To $' &&
+      !selectedFromMileage &&
+      !selectedToMileage
+    ) {
+      return;
     }
     const data = {
       brand: selectedBrand === 'Enter the text' ? '' : selectedBrand,
-      price: selectedPrice==="To $" ? '' : `$${parseInt(selectedPrice, 10)}`,
+      price: selectedPrice === 'To $' ? '' : `$${parseInt(selectedPrice, 10)}`,
       mileageFrom: selectedFromMileage.trim(),
       mileageTo: selectedToMileage.trim(),
       onFilter: true,
     };
     dispatch(setValueFilter(data));
-    setSelectedFromMileage('')
-    setSelectedToMileage('')
   };
 
   const handleFilterClear = e => {
     e.preventDefault();
     const data = {
       brand: '',
+      price: '',
+      mileageFrom: '',
+      mileageTo: '',
       onFilter: false,
     };
 
     dispatch(setValueFilter(data));
     setSelectedBrand('Enter the text');
-    setSelectedPrice('To $')
-    setSelectedFromMileage('')
-    setSelectedToMileage('')
-    setErrorMileage(false)
-  
+    setSelectedPrice('To $');
+    setSelectedFromMileage('');
+    setSelectedToMileage('');
+    setErrorMileage(false);
   };
 
   return (
@@ -171,19 +172,27 @@ export const Filter = () => {
         <LabelFilter>Сar mileage / km</LabelFilter>
         <div style={{ display: 'flex' }}>
           <InputWrap>
-          
-            <InputFrom title="Only number" onChange={handleInputChangeFrom} value={selectedFromMileage}/>
+            <InputFrom
+              title="Only number"
+              onChange={handleInputChangeFrom}
+              value={selectedFromMileage}
+            />
             <LabelMileage>From</LabelMileage>
-            
           </InputWrap>
           <InputWrap>
-            <InputTo title="Only number" onChange={handleInputChangeTo} value={selectedToMileage}/>
+            <InputTo
+              title="Only number"
+              onChange={handleInputChangeTo}
+              value={selectedToMileage}
+            />
             <LabelMileage>To</LabelMileage>
-           
           </InputWrap>
-         
         </div>
-        {errorMileage && <p style={{textAlign: 'center', color: 'red', fontSize: '10px'}}>Enter an integer</p>}
+        {errorMileage && (
+          <p style={{ textAlign: 'center', color: 'red', fontSize: '10px' }}>
+            Enter an integer
+          </p>
+        )}
       </div>
       <ButtonFilter onClick={handleFilterSubmit}>Search</ButtonFilter>
       <ButtonFilter onClick={handleFilterClear}>Clear filter</ButtonFilter>

@@ -1,11 +1,8 @@
 import persistReducer from 'redux-persist/es/persistReducer';
 import storage from 'redux-persist/lib/storage';
-// import persistReducer from 'redux-persist/es/persistReducer';
-// import { persistReducer } from 'redux-persist';
 import { carsReducer } from './cars/carsSlice';
 import { favoriteReducer } from './favorite/favoriteSlice';
 import { filterReducer } from './filter/filterSlice';
-// import { combineReducers } from '@reduxjs/toolkit';
 
 const favoritePersistConfig = {
   key: 'favorite',

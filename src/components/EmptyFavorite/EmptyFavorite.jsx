@@ -10,7 +10,6 @@ export const EmptyFavorite = () => {
         Add your favorite cars by clicking on the heart on the right in the
         catalog
       </EmptyFavoriteText>
-      
     </ContainerEmptyFavorite>
   );
 };

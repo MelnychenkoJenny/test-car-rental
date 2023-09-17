@@ -26,7 +26,7 @@ export const ModalContent = styled.div`
 `;
 
 export const BtnClose = styled.button`
-position: absolute;
+  position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -39,9 +39,10 @@ position: absolute;
   background-color: transparent;
   svg {
     stroke: ${({ theme: { colors } }) => colors.primaryText};
-    transition: stroke 300ms ${({ theme: { transition } }) => transition.timingFunction};
+    transition: stroke 300ms
+      ${({ theme: { transition } }) => transition.timingFunction};
     &:hover {
-       stroke: ${({ theme: { colors } }) => colors.accentDark};
+      stroke: ${({ theme: { colors } }) => colors.accentDark};
     }
   }
-`
+`;

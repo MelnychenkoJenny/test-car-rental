@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const filterInitialState = {
-onFilter: false,
+  onFilter: false,
   brand: '',
   price: '',
   mileageFrom: '',
@@ -12,13 +12,12 @@ const filterSlice = createSlice({
   name: 'filter',
   initialState: filterInitialState,
   reducers: {
-    setValueFilter(state, {payload}) {
-        console.log(4545, payload)
+    setValueFilter(state, { payload }) {
       state.brand = payload.brand;
       state.price = payload.price;
       state.mileageFrom = payload.mileageFrom;
       state.mileageTo = payload.mileageTo;
-      state.onFilter = payload.onFilter
+      state.onFilter = payload.onFilter;
     },
   },
 });

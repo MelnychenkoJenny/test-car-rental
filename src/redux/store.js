@@ -9,7 +9,6 @@ import {
   PURGE,
   REGISTER,
 } from 'redux-persist';
-// import { carsReducer } from './cars/carsSlice';
 
 export const store = configureStore({
   reducer,

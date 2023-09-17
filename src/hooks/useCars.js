@@ -6,7 +6,13 @@ import {
   selectIsLoading,
 } from 'redux/cars/carsSelectors';
 import { selectFavorite } from 'redux/favorite/favoriteSelectors';
-import { selectBrand, selectMileageFrom, selectMileageTo, selectOnFilter, selectPrice } from 'redux/filter/filterSelectors';
+import {
+  selectBrand,
+  selectMileageFrom,
+  selectMileageTo,
+  selectOnFilter,
+  selectPrice,
+} from 'redux/filter/filterSelectors';
 
 export const useCars = () => {
   return {
@@ -19,9 +25,6 @@ export const useCars = () => {
     brandFilter: useSelector(selectBrand),
     priceFilter: useSelector(selectPrice),
     mileageFrom: useSelector(selectMileageFrom),
-    mileageTo: useSelector(selectMileageTo)
+    mileageTo: useSelector(selectMileageTo),
   };
 };
-
-// import { useCars } from 'hooks';
-// const { allCars, allCarsForFilter, isLoading, error, favorite, onFilter, brandFIlter } = useCars();

@@ -20,6 +20,6 @@ export const LoadingStyle = styled.div`
 `;
 
 export const LoadingWrap = styled.div`
-height: 100vh;
-padding-top: 230px;
-`
+  height: 100vh;
+  padding-top: 230px;
+`;
