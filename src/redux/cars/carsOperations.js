@@ -9,10 +9,21 @@ export const getAllCars = createAsyncThunk(
     async (page, { rejectWithValue }) => {
         try {
           const {data} = await axios.get(`/adverts?p=${page}&l=8`);
-console.log('data res', data)
           return data;
         } catch (e) {
           return rejectWithValue(e.message);
         }
       }
+)
+
+export const getAllCarsWithoutPage = createAsyncThunk(
+  'cars/getAllCars',
+  async (_, { rejectWithValue }) => {
+      try {
+        const {data} = await axios.get(`/adverts`);
+        return data;
+      } catch (e) {
+        return rejectWithValue(e.message);
+      }
+    }
 )

@@ -63,7 +63,7 @@ export const CarItem = ({ dataCar }) => {
   const feature = accessories[2];
   const conditions = rentalConditions.split('\n')
   const age = conditions[0].match(/\d+/)
-console.log('conditions :>> ', conditions);
+
   const openModal = () => {
     setShowModal(true);
   };
@@ -71,20 +71,20 @@ console.log('conditions :>> ', conditions);
   const closeModal = () => {
     setShowModal(false);
   };
-  // const [favorite, setFavorite] = useState([])
-  console.log('favorite :>> ', favorite);
+
+
 
   const handleFavorite = dataCar => {
     if (!favorite.some(car => car.id === dataCar.id)) {
-      dispatch(addToFavorite(dataCar)); // Додати до улюблених, якщо ще не у списку
+      dispatch(addToFavorite(dataCar));
     } else {
-      dispatch(removeFromFavorite(dataCar)); // Видалити зі списку улюблених, якщо вже там
+      dispatch(removeFromFavorite(dataCar)); 
     }
   };
 
   return (
     <>
-      <ListItem>
+      <ListItem key={img+'333'}>
         <FavoriteBtn type="button" onClick={() => handleFavorite(dataCar)}>
           {favorite.some(car => car.id === dataCar.id) ? (
             <svg>
@@ -145,12 +145,12 @@ console.log('conditions :>> ', conditions);
             <TextModal>Accessories and functionalities:</TextModal>
             <InfoList>
               {accessories.map(el => (
-                <InfoItem>{el}</InfoItem>
+                <InfoItem key={el}>{el}</InfoItem>
               ))}
             </InfoList>
             <InfoListModal>
               {functionalities.map(el => (
-                <InfoItem>{el}</InfoItem>
+                <InfoItem key={el}>{el}</InfoItem>
               ))}
             </InfoListModal>
             <TextModal> Rental Conditions:</TextModal>

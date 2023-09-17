@@ -114,7 +114,6 @@ export const BtnLearnMore = styled.button`
   align-items: center;
   margin: 0 auto;
   margin-top: 28px;
-  font-size: 14px;
   font-weight: 600;
   line-height: 1.43;
   border-radius: 12px;
@@ -187,7 +186,6 @@ export const ModalScrollWrap = styled.div`
 
 export const RentalPhone = styled.a`
   display: flex;
-
   margin-top: 24px;
   width: 168px;
   height: 44px;

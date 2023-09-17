@@ -2,7 +2,7 @@ import { CarItem } from "components/CarItem";
 import { CartListStyle } from "./CartList.styled";
 
 export const CarList = ({ data }) => {
-  console.log(data);
+
 
 
   

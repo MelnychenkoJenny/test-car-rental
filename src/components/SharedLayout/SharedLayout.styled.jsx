@@ -14,7 +14,7 @@ export const ContainerMain = styled(Container)`
   margin-right: auto;
   padding-top: 0;
   padding-bottom: 30px;
-  max-width: 1250px;
+  max-width: 1440px;
   // @media screen and (min-width: 760px) {
   //   max-width: 760px;
   // }
@@ -40,7 +40,6 @@ export const NavList = styled.ul`
   display: flex;
   justify-content: center;
   gap: 40px;
-  font-size: 35px;
   text-align: center;
   // @media screen and (min-width: 760px) {
   //   gap: 80px;
@@ -51,6 +50,7 @@ export const NavList = styled.ul`
 `;
 
 export const NavItem = styled.li`
+font-size: 24px;
 font-weight: 600;
   transition: scale 300ms cubic-bezier(0.4, 0, 0.2, 1);
   :hover {

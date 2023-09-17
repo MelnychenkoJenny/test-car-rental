@@ -1,7 +1,6 @@
 import { CarItem } from 'components/CarItem';
 import { CartListStyle } from 'components/CarList/CartList.styled';
 import { EmptyFavorite } from 'components/EmptyFavorite/EmptyFavorite';
-import { ContainerMain } from 'components/SharedLayout/SharedLayout.styled';
 import { useCars } from 'hooks';
 import { FavoriteWrap } from './Favorites.styled';
 
@@ -9,8 +8,8 @@ const Favorites = () => {
   const { favorite } = useCars();
 
   return (
-   <ContainerMain>
-      <FavoriteWrap>
+   <FavoriteWrap>
+      <div>
         {favorite.length === 0 ? (
           <EmptyFavorite/>
         ) : (
@@ -20,8 +19,8 @@ const Favorites = () => {
             ))}
           </CartListStyle>
         )}
-      </FavoriteWrap>
-   </ContainerMain>
+      </div>
+   </FavoriteWrap>
   );
 };
 
