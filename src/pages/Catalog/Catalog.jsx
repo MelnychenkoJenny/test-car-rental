@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { getAllCars, getAllCarsWithoutPage } from 'redux/cars/carsOperations';
 import { useCars } from 'hooks';
 import { clearCarsData } from 'redux/cars/carsSlice';
@@ -9,8 +9,11 @@ import { CarList } from 'components/CarList';
 import { BtnMore } from './Catalog.styled';
 import { Loading } from 'components/Loading';
 import { ContainerMain } from 'components/SharedLayout/SharedLayout.styled';
+import { Error } from 'components/Error';
 
 const Catalog = () => {
+  const stateAll = useSelector(state => state);
+  console.log('stateAll :>> ', stateAll);
   const dispatch = useDispatch();
   const {
     allCars,
@@ -107,7 +110,7 @@ const Catalog = () => {
 
       <section>
         {filteredCars.length === 0 && onFilter ? (
-          <div>Nema machin</div>
+          <Error emptyFilter={true} />
         ) : (
           <CarList data={combinedCars} />
         )}

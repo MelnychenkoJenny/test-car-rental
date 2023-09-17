@@ -19,6 +19,7 @@ const handlegetAllCarsWithoutPageFulfilled = (state, {payload}) => {
 
 const handleRejected = (state, { payload }) => {
   state.isLoading = false;
+  console.log('payload :>> ', payload);
   state.error = payload;
 };
 

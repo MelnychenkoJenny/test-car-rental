@@ -54,8 +54,8 @@ export const Filter = () => {
 
   const handleInputChangeFrom = (e) => {
     const { value } = e.target;
-    console.log(!/^\d+$/.test(value));
-    if (!/^\d+$/.test(value)) {
+
+    if (!/^\d+$/.test(value.trim())) {
       setErrorMileage(true);
     } else {
       setErrorMileage(false);}
@@ -66,7 +66,7 @@ export const Filter = () => {
   const handleInputChangeTo = (e) => {
     const { value } = e.target;
     
-    if (!/^\d+$/.test(value)) {
+    if (!/^\d+$/.test(value.trim())) {
       setErrorMileage(true);
     } else {
       setErrorMileage(false);
@@ -78,14 +78,19 @@ export const Filter = () => {
 
   const handleFilterSubmit = e => {
     e.preventDefault();
+    if(selectedBrand === 'Enter the text' && selectedPrice==="To $" && !selectedFromMileage && !selectedToMileage) {
+      return
+    }
     const data = {
       brand: selectedBrand === 'Enter the text' ? '' : selectedBrand,
       price: selectedPrice==="To $" ? '' : `$${parseInt(selectedPrice, 10)}`,
-      mileageFrom: selectedFromMileage,
-      mileageTo: selectedToMileage,
+      mileageFrom: selectedFromMileage.trim(),
+      mileageTo: selectedToMileage.trim(),
       onFilter: true,
     };
     dispatch(setValueFilter(data));
+    setSelectedFromMileage('')
+    setSelectedToMileage('')
   };
 
   const handleFilterClear = e => {

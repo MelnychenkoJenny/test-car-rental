@@ -1,17 +1,20 @@
-import { ContainerError } from './Error.styled';
+import { ContainerError, TextError, ContainerFilterEmpty } from './Error.styled';
 import EmptyImg from 'images/error.png';
 
-export const Error = ({ error }) => {
+export const Error = ({ error, emptyFilter }) => {
   return (
-    <ContainerError>
-      <p style={{textAlign: 'center',}}>
-      Oops... Something went wrong. { error } 🙄
-      </p>
-      <img
-        src={EmptyImg}
-        alt="emptyImageCat"
-        width='300'
-      />
-    </ContainerError>
+    <div>
+       {error && <ContainerError><TextError>Oops... Something went wrong. {error} 🙄</TextError><img src={EmptyImg} alt="emptyImageCat" width="400" /></ContainerError>}
+      {emptyFilter && (
+        <ContainerFilterEmpty>
+          <TextError>
+            Oops... No car was found. Try changing the filter. 🙄
+          </TextError>
+          <img src={EmptyImg} alt="emptyImageCat" width="400" />
+        </ContainerFilterEmpty>
+      )}
+     
+      
+    </div>
   );
 };
