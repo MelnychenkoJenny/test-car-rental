@@ -10,7 +10,11 @@ export const Footer = () => {
         <use href={iconFill + '#heart-fill'}></use>
       </HeartIcon>
       <FooterText>performed by Evheniia Melnychenko</FooterText>
-      <Social to="https://github.com/MelnychenkoJenny" target="_blank">
+      <Social
+        to="https://github.com/MelnychenkoJenny"
+        target="_blank"
+        aria-label="Author github"
+      >
         <svg>
           <use href={iconGit + '#git'}></use>
         </svg>
@@ -18,6 +22,7 @@ export const Footer = () => {
       <Social
         to="https://www.linkedin.com/in/yevheniia-melnychenko/"
         target="_blank"
+        aria-label="Author linkedin"
       >
         <svg>
           <use href={iconLinkedin + '#linkedin'}></use>

@@ -82,7 +82,11 @@ export const CarItem = ({ dataCar }) => {
   return (
     <>
       <ListItem key={img + '333'}>
-        <FavoriteBtn type="button" onClick={() => handleFavorite(dataCar)}>
+        <FavoriteBtn
+          type="button"
+          onClick={() => handleFavorite(dataCar)}
+          aria-label="Add to Favorites"
+        >
           {favorite.some(car => car.id === dataCar.id) ? (
             <svg>
               <use href={iconFill + '#heart-fill'}></use>
@@ -112,7 +116,11 @@ export const CarItem = ({ dataCar }) => {
           <InfoItem>{id}</InfoItem>
           <InfoItem>{feature}</InfoItem>
         </InfoListSecond>
-        <BtnLearnMore type="button" onClick={openModal}>
+        <BtnLearnMore
+          type="button"
+          onClick={openModal}
+          aria-label="View full car information"
+        >
           Learn more
         </BtnLearnMore>
       </ListItem>
