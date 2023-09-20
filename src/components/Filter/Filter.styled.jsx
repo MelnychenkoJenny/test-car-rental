@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import InputMask from 'react-input-mask';
 
 export const FormFilter = styled.form`
   display: flex;
@@ -106,7 +107,7 @@ export const DropdownItem = styled.li`
   }
 `;
 
-export const InputFrom = styled.input`
+export const InputFrom = styled(InputMask)`
   position: relative;
   background-color: ${({ theme: { colors } }) => colors.bgInput};
   padding: 14px 24px 14px 75px;
@@ -127,7 +128,7 @@ export const InputWrap = styled.div`
   position: relative;
 `;
 
-export const InputTo = styled.input`
+export const InputTo = styled(InputMask)`
   background-color: ${({ theme: { colors } }) => colors.bgInput};
   border-color: ${({ theme: { colors } }) => colors.borderInput};
   padding: 14px 24px 14px 55px;

@@ -67,11 +67,8 @@ const Catalog = () => {
       const matchRentalPrices = car.rentalPrice.match(/\$(\d+)/);
       const matchPrice = match[1];
       const matchRentalPrice = matchRentalPrices[1];
-      const priceStep = 10;
 
-      const minPrice = Number(matchPrice) - priceStep;
-      const maxPrice = Number(matchPrice) + priceStep;
-      if (!(matchRentalPrice >= minPrice && matchRentalPrice <= maxPrice)) {
+      if (!(Number(matchPrice)>=Number(matchRentalPrice)  )) {
         isMatch = false;
       }
     }

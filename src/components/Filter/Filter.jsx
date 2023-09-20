@@ -1,5 +1,4 @@
 import { useState } from 'react';
-
 import { modelData, priceData } from 'components/constants/dataConstants';
 import {
   ButtonFilter,
@@ -19,6 +18,7 @@ import {
 import iconDown from 'images/iconDown.svg';
 import iconUp from 'images/iconUp.svg';
 import { useDispatch } from 'react-redux';
+
 import { setValueFilter } from 'redux/filter/filterSlice';
 
 export const Filter = () => {
@@ -28,7 +28,6 @@ export const Filter = () => {
   const [selectedPrice, setSelectedPrice] = useState('To $');
   const [selectedFromMileage, setSelectedFromMileage] = useState('');
   const [selectedToMileage, setSelectedToMileage] = useState('');
-  const [errorMileage, setErrorMileage] = useState(false);
   const dispatch = useDispatch();
 
   const handleShownSelectedBrand = e => {
@@ -51,25 +50,12 @@ export const Filter = () => {
 
   const handleInputChangeFrom = e => {
     const { value } = e.target;
-
-    if (!/^\d+$/.test(value.trim())) {
-      setErrorMileage(true);
-    } else {
-      setErrorMileage(false);
-    }
-    setSelectedFromMileage(value);
+    setSelectedFromMileage(value.replace(/,/g, ''));
   };
 
   const handleInputChangeTo = e => {
     const { value } = e.target;
-
-    if (!/^\d+$/.test(value.trim())) {
-      setErrorMileage(true);
-    } else {
-      setErrorMileage(false);
-    }
-
-    setSelectedToMileage(value);
+    setSelectedToMileage(value.replace(/,/g, ''));
   };
 
   const handleFilterSubmit = e => {
@@ -107,7 +93,6 @@ export const Filter = () => {
     setSelectedPrice('To $');
     setSelectedFromMileage('');
     setSelectedToMileage('');
-    setErrorMileage(false);
   };
 
   return (
@@ -173,6 +158,8 @@ export const Filter = () => {
         <div style={{ display: 'flex' }}>
           <InputWrap>
             <InputFrom
+              type="text"
+              mask="9,999"
               title="Only number"
               onChange={handleInputChangeFrom}
               value={selectedFromMileage}
@@ -181,6 +168,8 @@ export const Filter = () => {
           </InputWrap>
           <InputWrap>
             <InputTo
+              type="text"
+              mask="9,999"
               title="Only number"
               onChange={handleInputChangeTo}
               value={selectedToMileage}
@@ -188,11 +177,6 @@ export const Filter = () => {
             <LabelMileage>To</LabelMileage>
           </InputWrap>
         </div>
-        {errorMileage && (
-          <p style={{ textAlign: 'center', color: 'red', fontSize: '10px' }}>
-            Enter an integer
-          </p>
-        )}
       </div>
       <ButtonFilter onClick={handleFilterSubmit}>Search</ButtonFilter>
       <ButtonFilter onClick={handleFilterClear}>Clear filter</ButtonFilter>
