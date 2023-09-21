@@ -4,6 +4,7 @@ import InputMask from 'react-input-mask';
 export const FormFilter = styled.form`
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   align-items: end;
   gap: 18px;
   padding-bottom: 50px;

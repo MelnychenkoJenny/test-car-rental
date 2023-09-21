@@ -1,6 +1,6 @@
 import styled, { keyframes } from 'styled-components';
 import { Link } from 'react-router-dom';
-import image from 'images/home-cars.png';
+import image from 'images/home1300.jpg';
 
 const slideInLeft = keyframes`
  to {
@@ -10,18 +10,31 @@ const slideInLeft = keyframes`
 `;
 
 export const HomeWrap = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-height: calc(100vh - 168px);
+
+  justify-content: space-evenly;
   margin: 0px;
   padding: 30px 0px;
-  background-image: url(${image});
-  background-size: 1100px;
-  background-position: center 310px;
+  background-image: linear-gradient(
+      to right,
+      rgba(47, 48, 58, 0.4),
+      rgba(47, 48, 58, 0.4)
+    ),
+    url(${image});
+  background-position: right;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  background-size: cover;
+  @media screen and (min-width: 760px) {
+    min-height: calc(100vh - (95px + 84px));
+  }
 `;
 
 export const MainTitle = styled.h1`
-  margin-bottom: 10px;
-  font-size: 60px;
+  font-size: 40px;
   font-weight: 600;
   color: ${({ theme: { colors } }) => colors.mainTitle};
   text-transform: uppercase;
@@ -34,30 +47,39 @@ export const MainTitle = styled.h1`
     1px 6px 0px ${({ theme: { colors } }) => colors.textShadow},
     1px 10px 5px rgba(16, 16, 16, 0.5), 1px 15px 10px rgba(16, 16, 16, 0.4),
     1px 20px 30px rgba(16, 16, 16, 0.3), 1px 25px 50px rgba(16, 16, 16, 0.2);
+
+  @media screen and (min-width: 760px) {
+    font-size: 60px;
+  }
 `;
 
 export const CountryText = styled.p`
-  margin-bottom: 15px;
-  font-size: 28px;
+  font-size: 18px;
+  text-shadow: 2px 2px 3px ${({ theme: { colors } }) => colors.textShadowHome};
   font-weight: 600;
   text-align: center;
   color: ${({ theme: { colors } }) => colors.accentDark};
+  @media screen and (min-width: 760px) {
+    font-size: 28px;
+  }
 `;
 
 export const HomeList = styled.ul`
   position: relative;
   display: flex;
   -webkit-box-pack: center;
+  max-width: 700px;
+  margin: 0 auto;
   justify-content: center;
   flex-wrap: wrap;
   gap: 15px;
-  padding-bottom: 210px;
+  // padding-bottom: 210px;
 `;
 export const HomeItem = styled.li`
   margin: 4px 0;
   position: relative;
   font-weight: 600;
-  font-size: 16px;
+  font-size: 14px;
   left: 0;
   background-color: ${({ theme: { colors } }) => colors.featureHome};
   border-left: 2px solid ${({ theme: { colors } }) => colors.mainTitle};
@@ -93,6 +115,10 @@ export const HomeItem = styled.li`
   &:hover:before {
     transform: scaleX(1);
   }
+
+  @media screen and (min-width: 760px) {
+    font-size: 16px;
+  }
 `;
 
 export const LinkRental = styled(Link)`
@@ -101,7 +127,7 @@ export const LinkRental = styled(Link)`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0 auto 30px;
+  margin: 0 auto /*30px*/;
   font-weight: 600;
   line-height: 1.43;
   border-radius: 12px;

@@ -1,40 +1,28 @@
 import { Error } from 'components/Error';
 import { Footer } from 'components/Footer';
+import { Header } from 'components/Header';
 import { Loading } from 'components/Loading';
 import { useCars } from 'hooks';
 import { Suspense } from 'react';
-import { Outlet } from 'react-router-dom';
-import {
-  Container,
-  Header,
-  NavItem,
-  NavLinkStyles,
-  NavList,
-} from './SharedLayout.styled';
+import { Outlet, useLocation} from 'react-router-dom';
+import { CatalogHeader, HeaderStyle, FooterStyle, CatalogFooter } from './SharedLayout.styled';
+
 
 export const SharedLayout = () => {
   const { error } = useCars();
+  const {pathname: currentPath} = useLocation();
+console.log('currentPath :>> ', currentPath);
   return (
     <>
-      <Header>
-        <Container>
-          <nav>
-            <NavList>
-              <NavItem>
-                <NavLinkStyles to="/" end>
-                  Home
-                </NavLinkStyles>
-              </NavItem>
-              <NavItem>
-                <NavLinkStyles to="catalog">Catalog</NavLinkStyles>
-              </NavItem>
-              <NavItem>
-                <NavLinkStyles to="favorites">Favorites</NavLinkStyles>
-              </NavItem>
-            </NavList>
-          </nav>
-        </Container>
-      </Header>
+      {currentPath === '/' ? (
+        <HeaderStyle>
+          <Header/>
+        </HeaderStyle>
+      ) : (
+        <CatalogHeader>
+          <Header/>
+        </CatalogHeader>
+      )}
       <Suspense fallback={<Loading />}>
         <main>
           {error ? (
@@ -46,7 +34,16 @@ export const SharedLayout = () => {
           )}
         </main>
       </Suspense>
-      <Footer />
+      {currentPath === '/' ? (
+        <FooterStyle>
+        <Footer/>
+      </FooterStyle>
+      ) : (
+        <CatalogFooter>
+        <Footer/>
+      </CatalogFooter>
+      )}
+      
     </>
   );
 };

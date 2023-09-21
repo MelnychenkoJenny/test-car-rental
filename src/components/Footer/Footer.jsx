@@ -1,11 +1,11 @@
 import iconFill from 'images/heartFill.svg';
 import iconGit from 'images/github.svg';
 import iconLinkedin from 'images/linkedin.svg';
-import { FooterStyle, FooterText, HeartIcon, Social } from './Footer.styled';
+import { FooterText, HeartIcon, Social } from './Footer.styled';
 
 export const Footer = () => {
   return (
-    <FooterStyle>
+    <>
       <HeartIcon>
         <use href={iconFill + '#heart-fill'}></use>
       </HeartIcon>
@@ -28,6 +28,6 @@ export const Footer = () => {
           <use href={iconLinkedin + '#linkedin'}></use>
         </svg>
       </Social>
-    </FooterStyle>
+    </>
   );
 };

@@ -13,18 +13,6 @@ const heartbeat = keyframes`
   }
 `;
 
-export const FooterStyle = styled.footer`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-  padding: 30px 15px;
-  background: linear-gradient(
-    to bottom,
-    ${({ theme: { colors } }) => colors.white},
-    ${({ theme: { colors } }) => colors.bgHeader}
-  );
-`;
 
 export const HeartIcon = styled.svg`
   width: 18px;

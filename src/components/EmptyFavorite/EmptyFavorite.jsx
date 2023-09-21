@@ -3,6 +3,7 @@ import {
   EmptyFavoriteText,
 } from './EmptyFavorite.styled';
 
+
 export const EmptyFavorite = () => {
   return (
     <ContainerEmptyFavorite>
