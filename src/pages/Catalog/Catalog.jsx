@@ -100,8 +100,8 @@ const Catalog = () => {
 
   return (
     <ContainerMain>
-      {!isLoading && !error ? <Filter /> : <Loading />}
-
+      {isLoading && !error && <Loading />}
+      <Filter /> 
       <section>
         {filteredCars.length === 0 && onFilter ? (
           <Error emptyFilter={true} />

@@ -20,16 +20,23 @@ import iconUp from 'images/iconUp.svg';
 import { useDispatch } from 'react-redux';
 
 import { setValueFilter } from 'redux/filter/filterSlice';
+import { useCars } from 'hooks';
 
 export const Filter = () => {
-  const [selectedBrand, setSelectedBrand] = useState('Enter the text');
+  const { brandFilter, priceFilter } =
+    useCars();
+  const [selectedBrand, setSelectedBrand] = useState(
+    brandFilter ? brandFilter : 'Enter the text'
+  );
   const [isShownSelectBrand, setShownSelectBrand] = useState(false);
   const [isShownSelectPrice, setShownSelectPrice] = useState(false);
-  const [selectedPrice, setSelectedPrice] = useState('To $');
+  const [selectedPrice, setSelectedPrice] = useState(
+    priceFilter ? priceFilter : 'To $'
+  );
   const [selectedFromMileage, setSelectedFromMileage] = useState('');
   const [selectedToMileage, setSelectedToMileage] = useState('');
   const dispatch = useDispatch();
-
+  console.log(selectedBrand);
   const handleShownSelectedBrand = e => {
     e.preventDefault();
     setShownSelectBrand(prev => !prev);

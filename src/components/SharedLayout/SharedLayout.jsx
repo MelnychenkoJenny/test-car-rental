@@ -11,7 +11,7 @@ import { CatalogHeader, HeaderStyle, FooterStyle, CatalogFooter } from './Shared
 export const SharedLayout = () => {
   const { error } = useCars();
   const {pathname: currentPath} = useLocation();
-console.log('currentPath :>> ', currentPath);
+
   return (
     <>
       {currentPath === '/' ? (

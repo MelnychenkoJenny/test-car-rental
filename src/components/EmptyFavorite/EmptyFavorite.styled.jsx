@@ -1,10 +1,10 @@
 import styled from 'styled-components';
-import image1 from 'images/milos-car-rentals-1280.jpg';
+import image from 'images/favoriteEpmty.jpg';
 
 export const ContainerEmptyFavorite = styled.div`
   display: flex;
   justify-content: center;
-  background-image: url(${image1});
+  background-image: url(${image});
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

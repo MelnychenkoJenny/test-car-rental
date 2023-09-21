@@ -6,16 +6,23 @@ export const FormFilter = styled.form`
   justify-content: center;
   flex-wrap: wrap;
   align-items: end;
-  gap: 18px;
+  gap: 10px;
   padding-bottom: 50px;
+  @media screen and (min-width: 760px) {
+    gap: 18px;
+  }
 `;
 
 export const LabelFilter = styled.label`
+font-size: 12px;
   display: flex;
   margin-bottom: 8px;
   color: ${({ theme: { colors } }) => colors.label};
   font-weight: 500;
   line-height: 1.29;
+  @media screen and (min-width: 760px) {
+    font-size: 14px;
+  }
 `;
 
 export const Select = styled.div`
@@ -23,11 +30,11 @@ export const Select = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 224px;
+  width: 170px;
   height: 48px;
   border-radius: 14px;
   padding: 14px 18px 14px 18px;
-  font-size: 18px;
+  font-size: 14px;
   font-weight: 500;
   line-height: 1.11;
   border: transparent;
@@ -41,10 +48,17 @@ export const Select = styled.div`
     height: 20px;
     fill: transparent;
   }
+  @media screen and (min-width: 760px) {
+    width: 224px;
+    font-size: 18px;
+  }
 `;
 
 export const SelectPrice = styled(Select)`
-  width: 125px;
+  width: 100px;
+  @media screen and (min-width: 760px) {
+    width: 224px;
+  }
 `;
 
 export const DropDown = styled.div`
@@ -117,12 +131,18 @@ export const InputFrom = styled(InputMask)`
   border: transparent;
   border-right-style: solid;
   border-right-width: 1px;
-  height: 48px;
+  height: 42px;
   max-width: 160px;
-  font-size: 18px;
+  font-size: 14px;
   font-weight: 500;
   line-height: 1.11;
   outline: transparent;
+
+  @media screen and (min-width: 760px) {
+    height: 48px;
+    font-size: 18px;
+  }
+
 `;
 
 export const InputWrap = styled.div`
@@ -137,22 +157,31 @@ export const InputTo = styled(InputMask)`
   border-right: transparent;
   border-top: transparent;
   border-bottom: transparent;
-  height: 48px;
+  height: 42px;
   left: 160px;
   width: 160px;
-  font-size: 18px;
+  font-size: 14px;
   font-weight: 500;
   line-height: 1.11;
   outline: transparent;
+  @media screen and (min-width: 760px) {
+    height: 48px;
+    font-size: 18px;
+  }
 `;
 
 export const LabelMileage = styled.label`
   position: absolute;
   left: 24px;
   top: 14px;
-  font-size: 18px;
+  font-size: 14px;
   font-weight: 500;
   line-height: 1.11;
+
+  @media screen and (min-width: 760px) {
+    height: 48px;
+    font-size: 18px;
+  }
 `;
 
 export const ButtonFilter = styled.button`
