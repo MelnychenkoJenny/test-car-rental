@@ -4,7 +4,7 @@ export const theme = {
     accentDark: '#0B44CD',
     accentLight: '#3470FF',
     bgHeader: '#a7c1ff',
-    bgHeaderHome: 'rgb(161,161,165)',
+    bgHeaderHome: 'rgb(155,155,159)',
     bgFooterHome: 'rgb(172,172,176)',
     mainTitle: '#739bfb',
     textShadow: '#5f6e86',

@@ -1,13 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
-// export const ContainerVH = styled.div`
-// display: grid;
-// gtid-template-areas: "header" "main content" "footer";
-// grid-template-rows: auto 1fr auto;
-// min-height: 100vh;
-// `
-
 export const Container = styled.div`
   margin-left: auto;
   margin-right: auto;
