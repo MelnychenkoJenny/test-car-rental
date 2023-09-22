@@ -82,40 +82,45 @@ export const CarItem = ({ dataCar }) => {
   return (
     <>
       <ListItem key={img + '333'}>
-        <FavoriteBtn
-          type="button"
-          onClick={() => handleFavorite(dataCar)}
-          aria-label="Add to Favorites"
-        >
-          {favorite.some(car => car.id === dataCar.id) ? (
-            <svg>
-              <use href={iconFill + '#heart-fill'}></use>
-            </svg>
-          ) : (
-            <svg>
-              <use href={icon + '#heart'}></use>
-            </svg>
-          )}
-        </FavoriteBtn>
-        <Image src={img} alt={`${make} ${model}`} width="274" height="268" />
-        <TitleWrap>
-          <NameCar>
-            {make}
-            <NameAccent> {model}</NameAccent>, {year}
-          </NameCar>
-          <Price>{rentalPrice}</Price>
-        </TitleWrap>
-        <InfoList>
-          <InfoItem>{city}</InfoItem>
-          <InfoItem>{country}</InfoItem>
-          <InfoItem>{rentalCompany}</InfoItem>
-        </InfoList>
-        <InfoListSecond>
-          <InfoItem>{type}</InfoItem>
-          <InfoItem>{make}</InfoItem>
-          <InfoItem>{id}</InfoItem>
-          <InfoItem>{feature}</InfoItem>
-        </InfoListSecond>
+        <div>
+          <FavoriteBtn
+            type="button"
+            onClick={() => handleFavorite(dataCar)}
+            aria-label="Add to Favorites"
+          >
+            {favorite.some(car => car.id === dataCar.id) ? (
+              <svg>
+                <use href={iconFill + '#heart-fill'}></use>
+              </svg>
+            ) : (
+              <svg>
+                <use href={icon + '#heart'}></use>
+              </svg>
+            )}
+          </FavoriteBtn>
+          <Image src={img} alt={`${make} ${model}`} width="274" height="268" />
+
+          <div style={{ padding: '0 5px' }}>
+            <TitleWrap>
+              <NameCar>
+                {make}
+                <NameAccent> {model}</NameAccent>, {year}
+              </NameCar>
+              <Price>{rentalPrice}</Price>
+            </TitleWrap>
+            <InfoList>
+              <InfoItem>{city}</InfoItem>
+              <InfoItem>{country}</InfoItem>
+              <InfoItem>{rentalCompany}</InfoItem>
+            </InfoList>
+            <InfoListSecond>
+              <InfoItem>{type}</InfoItem>
+              <InfoItem>{make}</InfoItem>
+              <InfoItem>{id}</InfoItem>
+              <InfoItem>{feature}</InfoItem>
+            </InfoListSecond>
+          </div>
+        </div>
         <BtnLearnMore
           type="button"
           onClick={openModal}

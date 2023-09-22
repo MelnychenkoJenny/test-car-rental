@@ -10,6 +10,7 @@ import { BtnMore } from './Catalog.styled';
 import { Loading } from 'components/Loading';
 import { ContainerMain } from 'components/SharedLayout/SharedLayout.styled';
 import { Error } from 'components/Error';
+import { getFilteredCars } from 'components/helpers/getFilteredCars';
 
 const Catalog = () => {
   const dispatch = useDispatch();
@@ -57,41 +58,13 @@ const Catalog = () => {
     setPage(prev => prev + 1);
   };
 
-  const filteredCars = allCarsForFilter.filter(car => {
-    let isMatch = true;
-    if (brandFilter) {
-      isMatch = car.make === brandFilter;
-    }
-    if (priceFilter) {
-      const match = priceFilter.match(/\$(\d+)/);
-      const matchRentalPrices = car.rentalPrice.match(/\$(\d+)/);
-      const matchPrice = match[1];
-      const matchRentalPrice = matchRentalPrices[1];
-
-      if (!(Number(matchPrice)>=Number(matchRentalPrice)  )) {
-        isMatch = false;
-      }
-    }
-    if (mileageFrom) {
-      if (!(car.mileage >= mileageFrom)) {
-        isMatch = false;
-      }
-    }
-
-    if (mileageTo) {
-      if (!(car.mileage <= mileageTo)) {
-        isMatch = false;
-      }
-    }
-
-    if (mileageFrom && mileageTo) {
-      if (!(car.mileage >= mileageFrom && car.mileage <= mileageTo)) {
-        isMatch = false;
-      }
-    }
-
-    return isMatch;
-  });
+  const filteredCars = getFilteredCars(
+    allCarsForFilter,
+    brandFilter,
+    priceFilter,
+    mileageFrom,
+    mileageTo
+  );
 
   const showBtnMore =
     allCars.length / 8 >= page && !isLoading && showButton && !onFilter;
@@ -101,7 +74,7 @@ const Catalog = () => {
   return (
     <ContainerMain>
       {isLoading && !error && <Loading />}
-      <Filter /> 
+      <Filter />
       <section>
         {filteredCars.length === 0 && onFilter ? (
           <Error emptyFilter={true} />

@@ -36,7 +36,7 @@ export const Filter = () => {
   const [selectedFromMileage, setSelectedFromMileage] = useState('');
   const [selectedToMileage, setSelectedToMileage] = useState('');
   const dispatch = useDispatch();
-  console.log(selectedBrand);
+
   const handleShownSelectedBrand = e => {
     e.preventDefault();
     setShownSelectBrand(prev => !prev);
@@ -170,8 +170,9 @@ export const Filter = () => {
               title="Only number"
               onChange={handleInputChangeFrom}
               value={selectedFromMileage}
+              id='mileageFrom'
             />
-            <LabelMileage>From</LabelMileage>
+            <LabelMileage htmlFor='mileageFrom'>From</LabelMileage>
           </InputWrap>
           <InputWrap>
             <InputTo
@@ -180,8 +181,9 @@ export const Filter = () => {
               title="Only number"
               onChange={handleInputChangeTo}
               value={selectedToMileage}
+              id='mileageTo'
             />
-            <LabelMileage>To</LabelMileage>
+            <LabelMileage htmlFor='mileageTo'>To</LabelMileage>
           </InputWrap>
         </div>
       </div>
