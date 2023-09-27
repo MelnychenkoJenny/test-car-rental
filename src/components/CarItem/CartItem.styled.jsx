@@ -116,7 +116,6 @@ export const BtnLearnMore = styled.button`
   justify-content: center;
   align-items: center;
   margin: 0 auto;
-  margin-top: 28px;
   font-weight: 600;
   line-height: 1.43;
   border-radius: 12px;
@@ -190,8 +189,10 @@ export const ModalScrollWrap = styled.div`
 export const RentalPhone = styled.a`
   display: flex;
   margin-top: 24px;
-  width: 168px;
-  height: 44px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 140px;
+  height: 35px;
   justify-content: center;
   align-items: center;
   color: ${({ theme: { colors } }) => colors.white};
@@ -202,5 +203,9 @@ export const RentalPhone = styled.a`
     ${({ theme: { transition } }) => transition.timingFunction};
   &:hover {
     background-color: ${({ theme: { colors } }) => colors.accentDark};
+  }
+  @media screen and (min-width: 760px) {
+    width: 168px;
+    height: 44px;
   }
 `;

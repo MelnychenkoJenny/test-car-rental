@@ -11,7 +11,7 @@ import {
 const Home = () => {
   return (
     <HomeWrap>
-      <MainTitle>Dayly rental of cars in Ukraine</MainTitle>
+      <MainTitle>Car rental in Ukraine</MainTitle>
       <CountryText>Kyiv, Lviv, Dnipro, Odesa, Kharkiv, Vinnytsia</CountryText>
       <HomeList>
         <HomeItem>
