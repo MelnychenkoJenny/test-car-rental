@@ -10,7 +10,7 @@ export const theme = {
     textShadow: '#5f6e86',
     primaryText: '#121417',
     secondaryText: '#12141780',
-    secondaryTextLight: '#12141733',
+    secondaryTextLight: '#12141773',
     label: '#8A8A89',
     bgInput: '#F7F7FB',
     bgElements: '#F9F9F9',
